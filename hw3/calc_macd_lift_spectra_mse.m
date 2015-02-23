@@ -11,9 +11,6 @@ function mse = calc_macd_lift_spectra_mse(N_eff_lift, N_eff_ema, N_window)
 %  3) computes the cumulative sum of each amplitude spectrum; 
 %  4) computes and returns the MSE of the two cumulative amplitude spectra.
 %
-% inputs:   /N_eff_lift/   effective-length parameter of lifted ema
-%           /N_eff_ema/    effective length of ema
-%           /N_window/     must be 2^m long, and >= ~ 8 x N_eff
 
 % construct windows
 h_ema  = make_h_ema(N_eff_ema, N_window);

@@ -11,9 +11,6 @@ function mse = calc_box_macd_spectra_mse(N_eff, N_box, N_window)
 % 3) computes the cumulative sum of each amplitude spectrum; 
 % 4) computes and returns the MSE of the two cumulative amplitude spectra.
 %
-% inputs:   /N_eff/     effective length of positive (shorter) ema
-%           /N_box/     width of box 
-%           /N_window/  must be 2^m long, and >= ~ 8 x N_eff
 
 % construct windows
 
