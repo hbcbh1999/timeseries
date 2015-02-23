@@ -77,8 +77,8 @@ plot(cumsum(fft_h_ema_opt(1:N_window/2)), 'k');
 % ratio that you found.
 
 box_ema_overlap = sum(h_ema_opt .* h_box) / sqrt(sum(h_ema_opt.^2) * sum(h_box.^2));
-disp(['N_eff^opt: ' num2str(N_eff_ema_opt)]);
-disp(['N_eff / N_box: ' num2str(box_ema_overlap)])
+disp(['N_eff^opt: ' num2str(N_eff_ema_opt)]);  % N_eff^opt: 9.8071
+disp(['N_eff / N_box: ' num2str(box_ema_overlap)]) % N_eff / N_box: 0.89501
 
 % g) Apply to the Price Series: Convolve the box and spectrally-matched ema 
 % impulse responses with the price series you generated from last week. 
@@ -168,8 +168,8 @@ plot(cumsum(fft_h_lift_opt(1:N_window/2)), 'k');
 % found.
 
 ema_lift_overlap = sum(h_lift_opt .* h_ema) / sqrt(sum(h_lift_opt.^2) * sum(h_ema.^2));
-disp(['N_lift^opt: ' num2str(N_eff_lift_opt)]);
-disp(['N_lift^opt / N_eff: ' num2str(1.0/ema_lift_overlap)]);
+disp(['N_lift^opt: ' num2str(N_eff_lift_opt)]); % N_lift^opt: 11.553
+disp(['N_lift^opt / N_eff: ' num2str(1.0/ema_lift_overlap)]); % N_lift^opt / N_eff: 1.0601
 
 % g) Apply to the Price Series: Convolve the ema and spectrally-matched 
 % lifted macd-poly impulse responses with the price series you generated 
@@ -252,9 +252,10 @@ axes(ax(3));
 plot(cumsum(fft_h_macd_opt(1:N_window/2)), 'k');
 
 boxdiff_macd_overlap = sum(h_macd_opt .* h_box_diff) / sqrt(sum(h_macd_opt.^2) * sum(h_box_diff.^2));
-disp(['N_eff_pos_opt: ' num2str(N_eff_pos_opt)])
-disp(['N_eff_neg_opt: ' num2str(3*N_eff_pos_opt)]);
-disp(['N_box / N_eff^opt: ' num2str(boxdiff_macd_overlap)]);
+disp(['N_eff_pos^opt: ' num2str(N_eff_pos_opt)]) % N_eff_pos^opt: 11.974
+disp(['N_eff_neg^opt: ' num2str(3*N_eff_pos_opt)]); % N_eff_neg_opt: 35.922
+disp(['N_box / N_eff^opt: ' num2str(boxdiff_macd_overlap)]); % N_box / N_eff^opt: 0.61643
+
 
 % g) Apply to the Price Series: Convolve the box differencer and spectrally
 % matched macd impulse responses with the price series you generated from 
