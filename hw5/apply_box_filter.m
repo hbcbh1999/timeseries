@@ -30,8 +30,3 @@ end
 
 % remove the i.c. pad, add back the x[1] value
 y = yn(1 + lags_y:end) + x(1);
-
-
-
-
-
